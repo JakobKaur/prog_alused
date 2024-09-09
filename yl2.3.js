@@ -1,6 +1,4 @@
-// Funktsioon pulsivahemiku arvutamiseks
 function pulsivahemik(vanus, sugu, treeningTüüp) {
-    // Arvuta maksimaalne pulsisagedus
     let maxPulsisagedus;
     if (sugu === 'M' || sugu === 'm') {
         maxPulsisagedus = 220 - vanus;
@@ -10,7 +8,6 @@ function pulsivahemik(vanus, sugu, treeningTüüp) {
         return "Vigane sisend soo jaoks!";
     }
 
-    // Määratle treeningu tüüpide protsendid
     let protsentVahemik;
     if (treeningTüüp === 1) {
         protsentVahemik = [0.5, 0.7]; // Tervisetreening
@@ -22,14 +19,12 @@ function pulsivahemik(vanus, sugu, treeningTüüp) {
         return "Vigane sisend treeningu tüübi jaoks!";
     }
 
-    // Arvuta pulsivahemik
     let minPulsisagedus = Math.round(maxPulsisagedus * protsentVahemik[0]);
     let maxPulsisagedusVahemik = Math.round(maxPulsisagedus * protsentVahemik[1]);
 
     return `${minPulsisagedus} kuni ${maxPulsisagedusVahemik}`;
 }
 
-// Küsime kasutajalt sisendit
 const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
